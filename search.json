@@ -66,8 +66,8 @@
     
     
     {
-      "title": "Ambiente de desenvolvimento",      
-      "url": "/ETEControll/docs/ambiente_desenvolvimento/",
+      "title": "Segurança/Perfil de acesso",      
+      "url": "/ETEControll/docs/documentacao/permissoes/",
       "tags": "",
       "keywords": "",      
       "summary": ""
@@ -88,8 +88,28 @@
     
     
     {
-      "title": "Arquitetura",      
+      "title": "Visão Geral",      
       "url": "/ETEControll/docs/visao_geral/",
+      "tags": "",
+      "keywords": "",      
+      "summary": ""
+    },
+  
+    
+    
+    {
+      "title": "Ambiente de desenvolvimento",      
+      "url": "/ETEControll/docs/ambiente_desenvolvimento/",
+      "tags": "",
+      "keywords": "",      
+      "summary": ""
+    },
+  
+    
+    
+    {
+      "title": "Dicas",      
+      "url": "/ETEControll/docs/arquitetura/dicas/",
       "tags": "",
       "keywords": "",      
       "summary": ""
