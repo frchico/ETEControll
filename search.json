@@ -66,8 +66,8 @@
     
     
     {
-      "title": "Segurança/Perfil de acesso",      
-      "url": "/ETEControll/docs/documentacao/permissoes/",
+      "title": "Estação de tratamento de Efluentes",      
+      "url": "/ETEControll/docs/documentacao/ete/",
       "tags": "",
       "keywords": "",      
       "summary": ""
@@ -76,8 +76,28 @@
     
     
     {
-      "title": "Material de apoio",      
-      "url": "/ETEControll/docs/material_apoio/",
+      "title": "Parâmetros",      
+      "url": "/ETEControll/docs/documentacao/parametros/",
+      "tags": "",
+      "keywords": "",      
+      "summary": ""
+    },
+  
+    
+    
+    {
+      "title": "Associação de Parâmetros de uma ETE",      
+      "url": "/ETEControll/docs/documentacao/associacao_parametro_ete/",
+      "tags": "",
+      "keywords": "",      
+      "summary": ""
+    },
+  
+    
+    
+    {
+      "title": "Segurança/Perfil de acesso",      
+      "url": "/ETEControll/docs/documentacao/permissoes/",
       "tags": "",
       "keywords": "",      
       "summary": ""
@@ -98,82 +118,8 @@
     
     
     {
-      "title": "Ambiente de desenvolvimento",      
-      "url": "/ETEControll/docs/ambiente_desenvolvimento/",
-      "tags": "",
-      "keywords": "",      
-      "summary": ""
-    },
-  
-    
-    
-    {
-      "title": "Dicas",      
-      "url": "/ETEControll/docs/arquitetura/dicas/",
-      "tags": "",
-      "keywords": "",      
-      "summary": ""
-    },
-  
-
-  
-    
-    
-    {
-      "title": "Exemplos",      
-      "url": "/ETEControll/docs/get_start/",
-      "tags": "",
-      "keywords": "",      
-      "summary": ""
-    },
-  
-    
-    
-    {
-      "title": "Themes",      
-      "url": "/ETEControll/docs/themes/",
-      "tags": "",
-      "keywords": "",      
-      "summary": ""
-    },
-  
-    
-    
-    {
-      "title": "Customization",      
-      "url": "/ETEControll/docs/customization/",
-      "tags": "",
-      "keywords": "",      
-      "summary": ""
-    },
-  
-
-  
-    
-    
-    {
-      "title": "Markdown Cheatsheet",      
-      "url": "/ETEControll/docs/cheatsheet/",
-      "tags": "",
-      "keywords": "",      
-      "summary": ""
-    },
-  
-    
-    
-    {
-      "title": "Font Awesome Icon List",      
-      "url": "/ETEControll/docs/font-awesome/",
-      "tags": "",
-      "keywords": "",      
-      "summary": ""
-    },
-  
-    
-    
-    {
-      "title": "Bootstrap Features",      
-      "url": "/ETEControll/docs/bootstrap/",
+      "title": "Preparação do ambiente",      
+      "url": "/ETEControll/docs/arquitetura/preparacao_ambiente/",
       "tags": "",
       "keywords": "",      
       "summary": ""

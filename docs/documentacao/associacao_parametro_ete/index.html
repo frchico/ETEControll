@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Dicas</title>
-    <meta name="description" content="Dicas de implementação utilizando AspNetBoilerplate">
+    <title>Associação de Parâmetros de uma ETE</title>
+    <meta name="description" content="Uma vez definidos os parâmetros de controle possível, faz-se necessário informar quais deles que são utilizados pela ETE em tela.">
 
 
     <link rel="stylesheet" href="/ETEControll/css/main.css">
@@ -15,23 +15,23 @@
 
     <link rel="shortcut icon" href="/ETEControll/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Dicas | ETEControll</title>
+<title>Associação de Parâmetros de uma ETE | ETEControll</title>
 <meta name="generator" content="Jekyll v3.4.3" />
-<meta property="og:title" content="Dicas" />
+<meta property="og:title" content="Associação de Parâmetros de uma ETE" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Dicas de implementação utilizando AspNetBoilerplate" />
-<meta property="og:description" content="Dicas de implementação utilizando AspNetBoilerplate" />
-<link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/dicas/" />
-<meta property="og:url" content="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/dicas/" />
+<meta name="description" content="Uma vez definidos os parâmetros de controle possível, faz-se necessário informar quais deles que são utilizados pela ETE em tela." />
+<meta property="og:description" content="Uma vez definidos os parâmetros de controle possível, faz-se necessário informar quais deles que são utilizados pela ETE em tela." />
+<link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/documentacao/associacao_parametro_ete/" />
+<meta property="og:url" content="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/documentacao/associacao_parametro_ete/" />
 <meta property="og:site_name" content="ETEControll" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-05-15T01:54:39-04:00" />
 <script type="application/ld+json">
-{"dateModified":"2018-05-15T01:54:39-04:00","datePublished":"2018-05-15T01:54:39-04:00","headline":"Dicas","url":"https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/dicas/","description":"Dicas de implementação utilizando AspNetBoilerplate","@type":"WebPage","@context":"http://schema.org"}</script>
+{"dateModified":"2018-05-15T01:54:39-04:00","datePublished":"2018-05-15T01:54:39-04:00","headline":"Associação de Parâmetros de uma ETE","url":"https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/documentacao/associacao_parametro_ete/","description":"Uma vez definidos os parâmetros de controle possível, faz-se necessário informar quais deles que são utilizados pela ETE em tela.","@type":"WebPage","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/dicas/">
+    <link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/documentacao/associacao_parametro_ete/">
     <link rel="alternate" type="application/rss+xml" title="ETEControll" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/feed.xml" />
 </head>
 
@@ -139,7 +139,7 @@
         
           
           
-          <a class="list-group-item " href="/ETEControll/docs/documentacao/associacao_parametro_ete/">Associação de Parâmetros de uma ETE</a>
+          <a class="list-group-item active" href="/ETEControll/docs/documentacao/associacao_parametro_ete/">Associação de Parâmetros de uma ETE</a>
         
           
           
@@ -177,76 +177,36 @@
         </div>
 
         <div class="col-md-8">
-            <h1>Dicas</h1><hr>
-            <div class="justify" id="markdown-content-container"><h2 id="dicas-de-implementação-utilizando-aspnetboilerplate">Dicas de implementação utilizando AspNetBoilerplate</h2>
+            <h1>Associação de Parâmetros de uma ETE</h1><hr>
+            <div class="justify" id="markdown-content-container"><p>Uma vez definidos os parâmetros de controle possível, faz-se necessário informar quais deles que são utilizados pela <abbr title="Estação de tratamento de efluentes">ETE</abbr> em tela.</p>
 
-<h5 id="arquivos-de-localização">Arquivos de Localização</h5>
-<p>Os arquivos de Localização são utilizados para traduzir um label para os usuários. No sistema utlizaremos a <a href="https://www.aspnetboilerplate.com/Pages/Documents/Localization">API</a> para suportar mais de uma linguagem.</p>
+<p>Foi com base nesta necessidade que o ETEControll projetou esta funcionalidade para permitir controlar melhor as operações de cada uma das <abbr title="Estação de tratamento de efluentes">ETE</abbr> de forma independente.</p>
 
-<p>Serão criados arquivos em XML e a ordenação das chaves será por data de criação, ou seja, seguirá o proposto pela API</p>
+<p>O usuário com permissão de associação de parâmetros deverá selecionar uma <abbr title="Estação de tratamento de efluentes">ETE</abbr> para adicionar/remover os parâmetros que ele deseja controlar.</p>
 
-<blockquote>
-  <p>If you use XML or JSON, we recommend you do not sort the texts by name. Sort them by creation date! This way, when someone translates it to another language, he/she can easily see which texts have been added recently.</p>
-</blockquote>
-
-<h5 id="usar-o-padrão-specifications-para-definir-regras-como">Usar o padrão <a href="https://www.aspnetboilerplate.com/Pages/Documents/Specifications">Specifications</a> para definir regras como:</h5>
+<p>Para cada parâmetro desejado ele deverá informar/ajustar:</p>
 
 <ul>
-  <li>listar estações que estão com problemas;</li>
-  <li>listar parametros de um determinado tipo…</li>
-</ul>
-
-<h5 id="configuração-do-timeout-de-uma-conexão">Configuração do timeout de uma conexão:</h5>
-
-<ul>
-  <li><a href="https://www.aspnetboilerplate.com/Pages/Documents/Unit-Of-Work">Exemplo</a>
-    <div class="highlighter-rouge"><pre class="highlight"><code>   public class SimpleTaskSystemCoreModule : AbpModule
-   {
-       public override void PreInitialize()
-       {
-           Configuration.UnitOfWork.IsolationLevel = IsolationLevel.ReadCommitted;
-           Configuration.UnitOfWork.Timeout = TimeSpan.FromMinutes(30);
-       }
-
-   //...other module methods
-   }
-</code></pre>
-    </div>
-    <h5 id="filtrando-dados-de-um-determinado-usuário">Filtrando dados de um determinado usuário</h5>
-  </li>
-</ul>
-
-<p>Util para fazer com que o usuário não possa ver os dados que outros criaram ou criar filtros de aplicação como limite de inserts
-    - <a href="https://github.com/zzzprojects/EntityFramework.DynamicFilters">API</a>
-    - <a href="https://www.aspnetboilerplate.com/Pages/Documents/Data-Filters">Exemplo de Implementação no sistema</a></p>
-
-<h5 id="adicionar-funcionalidades-ao-projeto">Adicionar funcionalidades ao projeto:</h5>
-
-<p>Permite validar a permissão se pode ou não exportar alguns dados. Ver como fazer essa personalização por usuário
-    - <a href="https://www.aspnetboilerplate.com/Pages/Documents/Feature-Management">Link</a>  <br />
-    - <a href="https://www.aspnetboilerplate.com/Pages/Documents/MVC-Views">Como usar as funcionalidades</a></p>
-
-<h5 id="logomarca">Logomarca:</h5>
-
-<ul>
-  <li><a href="https://dribbble.com/search?q=logo">Ideias para logomarca/imagens</a></li>
-</ul>
-
-<h5 id="código-de-conduta">Código de conduta</h5>
-
-<ul>
-  <li><a href="https://opensource.guide/code-of-conduct/">GitHub</a></li>
-</ul>
-
-<h5 id="auditoria">Auditoria:</h5>
-<ul>
-  <li><a href="https://www.aspnetboilerplate.com/Pages/Documents/Entity-History">Como fazer a auditoria</a></li>
-  <li>Labels em uma ação que é auditada
+  <li>A faixa de valores válidos</li>
+  <li>Tipo de coleta
     <ul>
-      <li>Util para vincular com caso de uso <a href="https://www.aspnetboilerplate.com/Pages/Documents/Entity-History#reason-property">Reason Property</a></li>
+      <li><em>in situ</em></li>
+      <li>Manual (opção padrão)</li>
+    </ul>
+  </li>
+  <li>Instruções de uso/coleta (texto descritivo, podendo conter imagens)</li>
+  <li>Frequência de uso na <abbr title="Estação de tratamento de efluentes">ETE</abbr>
+    <ul>
+      <li>Contínuo</li>
+      <li>Diário</li>
+      <li>Semanal</li>
+      <li>Mensal</li>
     </ul>
   </li>
 </ul>
+
+<div class="bs-callout bs-callout-primary">Note: <br /> - O sistema irá recuperar as informações cadastradas em cada parâmetro para que não seja necessário informar novamente. Assim, o usuário só informará o que for realmente diferente. <br /> <br />- O administrador do sistema poderá realizar qualquer acesso para qualquer item.</div>
+
 </div>
             
             <hr>            
@@ -282,16 +242,29 @@
 
   
   
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/ETEControll/docs/documentacao/parametros/">
+            <span aria-hidden="true">&larr;</span> Anterior
+          </a>
+        </li>
+      
 
-  
-  
-
-  
-  
-
-  
-  
-
+      
+        
+        
+        <li class="next">
+          <a href="/ETEControll/docs/documentacao/permissoes/">
+            Próximo <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+    </div>
+    <div class="clear"></div>
+    
 
         </div>
         

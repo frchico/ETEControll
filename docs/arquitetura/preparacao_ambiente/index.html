@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Dicas</title>
-    <meta name="description" content="Dicas de implementação utilizando AspNetBoilerplate">
+    <title>Preparação do ambiente</title>
+    <meta name="description" content="Siga as instruções a seguir para montar seu ambiente de desenvolvimento.">
 
 
     <link rel="stylesheet" href="/ETEControll/css/main.css">
@@ -15,23 +15,23 @@
 
     <link rel="shortcut icon" href="/ETEControll/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Dicas | ETEControll</title>
+<title>Preparação do ambiente | ETEControll</title>
 <meta name="generator" content="Jekyll v3.4.3" />
-<meta property="og:title" content="Dicas" />
+<meta property="og:title" content="Preparação do ambiente" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Dicas de implementação utilizando AspNetBoilerplate" />
-<meta property="og:description" content="Dicas de implementação utilizando AspNetBoilerplate" />
-<link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/dicas/" />
-<meta property="og:url" content="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/dicas/" />
+<meta name="description" content="Siga as instruções a seguir para montar seu ambiente de desenvolvimento." />
+<meta property="og:description" content="Siga as instruções a seguir para montar seu ambiente de desenvolvimento." />
+<link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/preparacao_ambiente/" />
+<meta property="og:url" content="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/preparacao_ambiente/" />
 <meta property="og:site_name" content="ETEControll" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-05-15T01:54:39-04:00" />
 <script type="application/ld+json">
-{"dateModified":"2018-05-15T01:54:39-04:00","datePublished":"2018-05-15T01:54:39-04:00","headline":"Dicas","url":"https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/dicas/","description":"Dicas de implementação utilizando AspNetBoilerplate","@type":"WebPage","@context":"http://schema.org"}</script>
+{"dateModified":"2018-05-15T01:54:39-04:00","datePublished":"2018-05-15T01:54:39-04:00","headline":"Preparação do ambiente","url":"https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/preparacao_ambiente/","description":"Siga as instruções a seguir para montar seu ambiente de desenvolvimento.","@type":"WebPage","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/dicas/">
+    <link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/preparacao_ambiente/">
     <link rel="alternate" type="application/rss+xml" title="ETEControll" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/feed.xml" />
 </head>
 
@@ -166,7 +166,7 @@
         
           
           
-          <a class="list-group-item " href="/ETEControll/docs/arquitetura/preparacao_ambiente/">Preparação do ambiente</a>
+          <a class="list-group-item active" href="/ETEControll/docs/arquitetura/preparacao_ambiente/">Preparação do ambiente</a>
         
       </ul>
     </div>
@@ -177,76 +177,101 @@
         </div>
 
         <div class="col-md-8">
-            <h1>Dicas</h1><hr>
-            <div class="justify" id="markdown-content-container"><h2 id="dicas-de-implementação-utilizando-aspnetboilerplate">Dicas de implementação utilizando AspNetBoilerplate</h2>
+            <h1>Preparação do ambiente</h1><hr>
+            <div class="justify" id="markdown-content-container"><p>Siga as instruções a seguir para montar seu ambiente de desenvolvimento.</p>
 
-<h5 id="arquivos-de-localização">Arquivos de Localização</h5>
-<p>Os arquivos de Localização são utilizados para traduzir um label para os usuários. No sistema utlizaremos a <a href="https://www.aspnetboilerplate.com/Pages/Documents/Localization">API</a> para suportar mais de uma linguagem.</p>
+<h2 id="instalando-o-ambiente-de-desenvolvimento">Instalando o ambiente de desenvolvimento</h2>
 
-<p>Serão criados arquivos em XML e a ordenação das chaves será por data de criação, ou seja, seguirá o proposto pela API</p>
+<h3 id="1-download-do-projeto">1. Download do projeto</h3>
 
-<blockquote>
-  <p>If you use XML or JSON, we recommend you do not sort the texts by name. Sort them by creation date! This way, when someone translates it to another language, he/she can easily see which texts have been added recently.</p>
-</blockquote>
+<p>Primeiro, faça o download dos códigos do projeto em <a href="https://github.com/saneamentoambiental/ETEControll">nosso repositório</a>.</p>
 
-<h5 id="usar-o-padrão-specifications-para-definir-regras-como">Usar o padrão <a href="https://www.aspnetboilerplate.com/Pages/Documents/Specifications">Specifications</a> para definir regras como:</h5>
+<h3 id="2-instale-o-visual-studio-2017-ou-visual-studio-code">2. Instale o <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017</a> ou <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio Code</a></h3>
 
-<ul>
-  <li>listar estações que estão com problemas;</li>
-  <li>listar parametros de um determinado tipo…</li>
-</ul>
+<h3 id="3-git">3. Git</h3>
 
-<h5 id="configuração-do-timeout-de-uma-conexão">Configuração do timeout de uma conexão:</h5>
+<p>É interessante que você instale o <code class="highlighter-rouge">GIT</code> para perceber as mudanças que são realizadas. Recomendamos o uso da ferramenta <a href="https://www.sourcetreeapp.com/" target="_blank">source tree</a> devida a compatibilidade com nosso repositório.</p>
+
+<h3 id="4-configure-o-banco-de-dados">4. Configure o banco de dados</h3>
+
+<p>Por padrão estamos utilizando o <code class="highlighter-rouge">Sql Server</code> com o <code class="highlighter-rouge">EntityFramework</code>. Desta forma, é necessário que seja alterada a string de conexão e execução do comando para criar as tabelas com os dados iniciais. Para tal, Realize:</p>
 
 <ul>
-  <li><a href="https://www.aspnetboilerplate.com/Pages/Documents/Unit-Of-Work">Exemplo</a>
-    <div class="highlighter-rouge"><pre class="highlight"><code>   public class SimpleTaskSystemCoreModule : AbpModule
-   {
-       public override void PreInitialize()
-       {
-           Configuration.UnitOfWork.IsolationLevel = IsolationLevel.ReadCommitted;
-           Configuration.UnitOfWork.Timeout = TimeSpan.FromMinutes(30);
-       }
+  <li>
+    <p>O ajuste na string de conexão do arquivo <code class="highlighter-rouge">appsettings.json</code> do projeto <code class="highlighter-rouge">Web</code> e do <code class="highlighter-rouge">EntityFrawork</code>.</p>
 
-   //...other module methods
-   }
+    <p>A chave utilizada pela aplicação é a <code class="highlighter-rouge">DefaultConnection</code>, como segue:</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>"ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=|DataDirectory|\database.mdf;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
 </code></pre>
     </div>
-    <h5 id="filtrando-dados-de-um-determinado-usuário">Filtrando dados de um determinado usuário</h5>
+  </li>
+  <li>
+    <p>Crie o banco</p>
+
+    <p>Utilize o Visual Studio para criar o banco de dados na string de conexão informada.</p>
+  </li>
+  <li>
+    <p>Crie as tabelas</p>
+
+    <p>Utilizando o console do Visual Studio, selecione o projeto <code class="highlighter-rouge">EntityFramework</code> e execute os comando <code class="highlighter-rouge">Update-Database</code>.</p>
   </li>
 </ul>
 
-<p>Util para fazer com que o usuário não possa ver os dados que outros criaram ou criar filtros de aplicação como limite de inserts
-    - <a href="https://github.com/zzzprojects/EntityFramework.DynamicFilters">API</a>
-    - <a href="https://www.aspnetboilerplate.com/Pages/Documents/Data-Filters">Exemplo de Implementação no sistema</a></p>
+<h3 id="5-altere-o-projeto-padrão">5. Altere o projeto padrão</h3>
 
-<h5 id="adicionar-funcionalidades-ao-projeto">Adicionar funcionalidades ao projeto:</h5>
+<p>Faça com que o projeto <code class="highlighter-rouge">Web</code> seja o projeto padrão.</p>
 
-<p>Permite validar a permissão se pode ou não exportar alguns dados. Ver como fazer essa personalização por usuário
-    - <a href="https://www.aspnetboilerplate.com/Pages/Documents/Feature-Management">Link</a>  <br />
-    - <a href="https://www.aspnetboilerplate.com/Pages/Documents/MVC-Views">Como usar as funcionalidades</a></p>
+<div class="bs-callout bs-callout-primary">É interessante o uso de plugins para a construção dos artefatos do projeto. Para tal, recomendamos que você faça uso do plugin <a target="_blank" href="https://github.com/sestek/ABPHelper">ABP Helper</a> para auxiliar neste <em>setup</em></div>
 
-<h5 id="logomarca">Logomarca:</h5>
+<h2 id="execução-da-solução">Execução da solução</h2>
 
+<p>Agora que o ambiente foi configurado, vamos testá-lo.</p>
+
+<h3 id="1-testando-a-apliação">1. Testando a apliação</h3>
+
+<p>Para testar a aplicação, faça:</p>
 <ul>
-  <li><a href="https://dribbble.com/search?q=logo">Ideias para logomarca/imagens</a></li>
-</ul>
+  <li>Primeiro execute-a através do comando Ctrl+F5 (executar sem depuração);</li>
+  <li>
+    <p>No site que abriu faça o login com os seguintes dados:</p>
 
-<h5 id="código-de-conduta">Código de conduta</h5>
-
-<ul>
-  <li><a href="https://opensource.guide/code-of-conduct/">GitHub</a></li>
-</ul>
-
-<h5 id="auditoria">Auditoria:</h5>
-<ul>
-  <li><a href="https://www.aspnetboilerplate.com/Pages/Documents/Entity-History">Como fazer a auditoria</a></li>
-  <li>Labels em uma ação que é auditada
-    <ul>
-      <li>Util para vincular com caso de uso <a href="https://www.aspnetboilerplate.com/Pages/Documents/Entity-History#reason-property">Reason Property</a></li>
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">Perfil</th>
+          <th style="text-align: center">Login</th>
+          <th style="text-align: center">Senha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">Administrador</td>
+          <td style="text-align: center">admin</td>
+          <td style="text-align: center">123qwe</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">Gerente</td>
+          <td style="text-align: center">gerente</td>
+          <td style="text-align: center">123qwe</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">Técnico</td>
+          <td style="text-align: center">tecnico</td>
+          <td style="text-align: center">123qwe</td>
+        </tr>
+      </tbody>
+    </table>
   </li>
 </ul>
+
+<div class="bs-callout bs-callout-">Se você está interessado em participar do projeto entre em contato conosco. Você também poderá sugerir mudanças ou esclarecimentos adicionais. Visite o site do grupo de pesquisa.</div>
+
+<h3 id="2-executando-o-site-em-contêineres">2. Executando o site em contêineres</h3>
+
+<p>Apesar do projeto ter o <code class="highlighter-rouge">dockerfile</code> e o <code class="highlighter-rouge">docker-compose</code>, a solução ainda não foi testada e não recomendamos o uso desta configuração. Caso consiga executar, nos comunique para que possamos atualizar a documentação.</p>
+
 </div>
             
             <hr>            
@@ -291,7 +316,27 @@
 
   
   
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/ETEControll/docs/visao_geral/">
+            <span aria-hidden="true">&larr;</span> Anterior
+          </a>
+        </li>
+      
 
+      
+        <li class="next disabled">
+          <a>
+            Próximo <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+    </div>
+    <div class="clear"></div>
+    
 
         </div>
         
