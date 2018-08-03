@@ -86,6 +86,26 @@
     
     
     {
+      "title": "Unidade de tratamento",      
+      "url": "/ETEControll/docs/documentacao/unidade_tratamento/",
+      "tags": "",
+      "keywords": "",      
+      "summary": ""
+    },
+  
+    
+    
+    {
+      "title": "Parâmetro de uma unidade de monitoramento",      
+      "url": "/ETEControll/docs/documentacao/parametro_unidade_tratamento/",
+      "tags": "",
+      "keywords": "",      
+      "summary": ""
+    },
+  
+    
+    
+    {
       "title": "Associação de Parâmetros de uma ETE",      
       "url": "/ETEControll/docs/documentacao/associacao_parametro_ete/",
       "tags": "",
@@ -98,6 +118,26 @@
     {
       "title": "Segurança/Perfil de acesso",      
       "url": "/ETEControll/docs/documentacao/permissoes/",
+      "tags": "",
+      "keywords": "",      
+      "summary": ""
+    },
+  
+    
+    
+    {
+      "title": "Coleta de dados de uma unidade de monitoramento",      
+      "url": "/ETEControll/docs/documentacao/coleta_unidade_tratamento/",
+      "tags": "",
+      "keywords": "",      
+      "summary": ""
+    },
+  
+    
+    
+    {
+      "title": "Coleta de parametros de uma unidade de tratamento",      
+      "url": "/ETEControll/docs/documentacao/parametro_coletado_unidade_tratamento/",
       "tags": "",
       "keywords": "",      
       "summary": ""
@@ -120,6 +160,16 @@
     {
       "title": "Preparação do ambiente",      
       "url": "/ETEControll/docs/arquitetura/preparacao_ambiente/",
+      "tags": "",
+      "keywords": "",      
+      "summary": ""
+    },
+  
+    
+    
+    {
+      "title": "Modelo de dados",      
+      "url": "/ETEControll/docs/arquitetura/modelo_dados/",
       "tags": "",
       "keywords": "",      
       "summary": ""

@@ -16,23 +16,23 @@
     <link rel="shortcut icon" href="/ETEControll/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.4.0 -->
 <title>Preparação do ambiente | ETEControll</title>
-<meta name="generator" content="Jekyll v3.4.3" />
+<meta name="generator" content="Jekyll v3.8.1" />
 <meta property="og:title" content="Preparação do ambiente" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Siga as instruções a seguir para montar seu ambiente de desenvolvimento." />
 <meta property="og:description" content="Siga as instruções a seguir para montar seu ambiente de desenvolvimento." />
-<link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/preparacao_ambiente/" />
-<meta property="og:url" content="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/preparacao_ambiente/" />
+<link rel="canonical" href="http://localhost:4000/ETEControll/docs/arquitetura/preparacao_ambiente/" />
+<meta property="og:url" content="http://localhost:4000/ETEControll/docs/arquitetura/preparacao_ambiente/" />
 <meta property="og:site_name" content="ETEControll" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-05-15T01:54:39-04:00" />
+<meta property="article:published_time" content="2018-08-02T21:37:00-03:00" />
 <script type="application/ld+json">
-{"dateModified":"2018-05-15T01:54:39-04:00","datePublished":"2018-05-15T01:54:39-04:00","headline":"Preparação do ambiente","url":"https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/preparacao_ambiente/","description":"Siga as instruções a seguir para montar seu ambiente de desenvolvimento.","@type":"WebPage","@context":"http://schema.org"}</script>
+{"description":"Siga as instruções a seguir para montar seu ambiente de desenvolvimento.","@type":"WebPage","url":"http://localhost:4000/ETEControll/docs/arquitetura/preparacao_ambiente/","headline":"Preparação do ambiente","dateModified":"2018-08-02T21:37:00-03:00","datePublished":"2018-08-02T21:37:00-03:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/preparacao_ambiente/">
-    <link rel="alternate" type="application/rss+xml" title="ETEControll" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/feed.xml" />
+    <link rel="canonical" href="http://localhost:4000/ETEControll/docs/arquitetura/preparacao_ambiente/">
+    <link rel="alternate" type="application/rss+xml" title="ETEControll" href="http://localhost:4000/ETEControll/feed.xml" />
 </head>
 
 
@@ -139,11 +139,27 @@
         
           
           
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/unidade_tratamento/">Unidade de tratamento</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/parametro_unidade_tratamento/">Parâmetro de uma unidade de monitoramento</a>
+        
+          
+          
           <a class="list-group-item " href="/ETEControll/docs/documentacao/associacao_parametro_ete/">Associação de Parâmetros de uma ETE</a>
         
           
           
           <a class="list-group-item " href="/ETEControll/docs/documentacao/permissoes/">Segurança/Perfil de acesso</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/coleta_unidade_tratamento/">Coleta de dados de uma unidade de monitoramento</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/parametro_coletado_unidade_tratamento/">Coleta de parametros de uma unidade de tratamento</a>
         
       </ul>
     </div>
@@ -168,6 +184,10 @@
           
           <a class="list-group-item active" href="/ETEControll/docs/arquitetura/preparacao_ambiente/">Preparação do ambiente</a>
         
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/arquitetura/modelo_dados/">Modelo de dados</a>
+        
       </ul>
     </div>
   </div>
@@ -177,22 +197,50 @@
         </div>
 
         <div class="col-md-8">
-            <h1>Preparação do ambiente</h1><hr>
-            <div class="justify" id="markdown-content-container"><p>Siga as instruções a seguir para montar seu ambiente de desenvolvimento.</p>
+            <h1>Preparação do ambiente</h1>
+<hr>
+            
+            <div class="justify" id="markdown-content-container">
+<ul class="section-nav">
+<li class="toc-entry toc-h2">
+<a href="#instalando-o-ambiente-de-desenvolvimento">Instalando o ambiente de desenvolvimento</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#1-download-do-projeto">1. Download do projeto</a></li>
+<li class="toc-entry toc-h3"><a href="#2-instale-o-visual-studio-2017-ou-visual-studio-code">2. Instale o Visual Studio 2017 ou Visual Studio Code</a></li>
+<li class="toc-entry toc-h3"><a href="#3-git">3. Git</a></li>
+<li class="toc-entry toc-h3"><a href="#4-configure-o-banco-de-dados">4. Configure o banco de dados</a></li>
+<li class="toc-entry toc-h3"><a href="#5-altere-o-projeto-padr%C3%A3o">5. Altere o projeto padrão</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2">
+<a href="#execu%C3%A7%C3%A3o-da-solu%C3%A7%C3%A3o">Execução da solução</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#1-testando-a-aplia%C3%A7%C3%A3o">1. Testando a apliação</a></li>
+<li class="toc-entry toc-h3"><a href="#2-executando-o-site-em-cont%C3%AAineres">2. Executando o site em contêineres</a></li>
+</ul>
+</li>
+</ul>
+<p>Siga as instruções a seguir para montar seu ambiente de desenvolvimento.</p>
 
-<h2 id="instalando-o-ambiente-de-desenvolvimento">Instalando o ambiente de desenvolvimento</h2>
+<h2 id="instalando-o-ambiente-de-desenvolvimento">
+<a id="instalando-o-ambiente-de-desenvolvimento" class="anchor" href="#instalando-o-ambiente-de-desenvolvimento" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instalando o ambiente de desenvolvimento</h2>
 
-<h3 id="1-download-do-projeto">1. Download do projeto</h3>
+<h3 id="1-download-do-projeto">
+<a id="1-download-do-projeto" class="anchor" href="#1-download-do-projeto" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Download do projeto</h3>
 
-<p>Primeiro, faça o download dos códigos do projeto em <a href="https://github.com/saneamentoambiental/ETEControll">nosso repositório</a>.</p>
+<p>Primeiro, faça o download dos códigos do projeto em <a href="https://github.com/saneamentoambiental/ETEControll" rel="nofollow" target="_blank">nosso repositório</a>.</p>
 
-<h3 id="2-instale-o-visual-studio-2017-ou-visual-studio-code">2. Instale o <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017</a> ou <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio Code</a></h3>
+<h3 id="2-instale-o-visual-studio-2017-ou-visual-studio-code">
+<a id="2-instale-o-visual-studio-2017-ou-visual-studio-code" class="anchor" href="#2-instale-o-visual-studio-2017-ou-visual-studio-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Instale o <a href="https://www.visualstudio.com/downloads/" target="_blank" rel="nofollow">Visual Studio 2017</a> ou <a href="https://www.visualstudio.com/downloads/" target="_blank" rel="nofollow">Visual Studio Code</a>
+</h3>
 
-<h3 id="3-git">3. Git</h3>
+<h3 id="3-git">
+<a id="3-git" class="anchor" href="#3-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Git</h3>
 
-<p>É interessante que você instale o <code class="highlighter-rouge">GIT</code> para perceber as mudanças que são realizadas. Recomendamos o uso da ferramenta <a href="https://www.sourcetreeapp.com/" target="_blank">source tree</a> devida a compatibilidade com nosso repositório.</p>
+<p>É interessante que você instale o <code class="highlighter-rouge">GIT</code> para perceber as mudanças que são realizadas. Recomendamos o uso da ferramenta <a href="https://www.sourcetreeapp.com/" target="_blank" rel="nofollow">source tree</a> devida a compatibilidade com nosso repositório.</p>
 
-<h3 id="4-configure-o-banco-de-dados">4. Configure o banco de dados</h3>
+<h3 id="4-configure-o-banco-de-dados">
+<a id="4-configure-o-banco-de-dados" class="anchor" href="#4-configure-o-banco-de-dados" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. Configure o banco de dados</h3>
 
 <p>Por padrão estamos utilizando o <code class="highlighter-rouge">Sql Server</code> com o <code class="highlighter-rouge">EntityFramework</code>. Desta forma, é necessário que seja alterada a string de conexão e execução do comando para criar as tabelas com os dados iniciais. Para tal, Realize:</p>
 
@@ -201,11 +249,11 @@
     <p>O ajuste na string de conexão do arquivo <code class="highlighter-rouge">appsettings.json</code> do projeto <code class="highlighter-rouge">Web</code> e do <code class="highlighter-rouge">EntityFrawork</code>.</p>
 
     <p>A chave utilizada pela aplicação é a <code class="highlighter-rouge">DefaultConnection</code>, como segue:</p>
-    <div class="highlighter-rouge"><pre class="highlight"><code>"ConnectionStrings": {
+    <div class="highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>"ConnectionStrings": {
     "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=|DataDirectory|\database.mdf;Trusted_Connection=True;MultipleActiveResultSets=true"
   }
-</code></pre>
-    </div>
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Crie o banco</p>
@@ -219,17 +267,21 @@
   </li>
 </ul>
 
-<h3 id="5-altere-o-projeto-padrão">5. Altere o projeto padrão</h3>
+<h3 id="5-altere-o-projeto-padrão">
+<a id="5-altere-o-projeto-padrão" class="anchor" href="#5-altere-o-projeto-padr%C3%A3o" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. Altere o projeto padrão</h3>
 
 <p>Faça com que o projeto <code class="highlighter-rouge">Web</code> seja o projeto padrão.</p>
 
-<div class="bs-callout bs-callout-primary">É interessante o uso de plugins para a construção dos artefatos do projeto. Para tal, recomendamos que você faça uso do plugin <a target="_blank" href="https://github.com/sestek/ABPHelper">ABP Helper</a> para auxiliar neste <em>setup</em></div>
+<div class="bs-callout bs-callout-primary">É interessante o uso de plugins para a construção dos artefatos do projeto. Para tal, recomendamos que você faça uso do plugin <a target="_blank" href="https://github.com/sestek/ABPHelper" rel="nofollow">ABP Helper</a> para auxiliar neste <em>setup</em>
+</div>
 
-<h2 id="execução-da-solução">Execução da solução</h2>
+<h2 id="execução-da-solução">
+<a id="execução-da-solução" class="anchor" href="#execu%C3%A7%C3%A3o-da-solu%C3%A7%C3%A3o" aria-hidden="true"><span class="octicon octicon-link"></span></a>Execução da solução</h2>
 
 <p>Agora que o ambiente foi configurado, vamos testá-lo.</p>
 
-<h3 id="1-testando-a-apliação">1. Testando a apliação</h3>
+<h3 id="1-testando-a-apliação">
+<a id="1-testando-a-apliação" class="anchor" href="#1-testando-a-aplia%C3%A7%C3%A3o" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Testando a apliação</h3>
 
 <p>Para testar a aplicação, faça:</p>
 <ul>
@@ -268,11 +320,14 @@
 
 <div class="bs-callout bs-callout-">Se você está interessado em participar do projeto entre em contato conosco. Você também poderá sugerir mudanças ou esclarecimentos adicionais. Visite o site do grupo de pesquisa.</div>
 
-<h3 id="2-executando-o-site-em-contêineres">2. Executando o site em contêineres</h3>
+<h3 id="2-executando-o-site-em-contêineres">
+<a id="2-executando-o-site-em-contêineres" class="anchor" href="#2-executando-o-site-em-cont%C3%AAineres" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Executando o site em contêineres</h3>
 
 <p>Apesar do projeto ter o <code class="highlighter-rouge">dockerfile</code> e o <code class="highlighter-rouge">docker-compose</code>, a solução ainda não foi testada e não recomendamos o uso desta configuração. Caso consiga executar, nos comunique para que possamos atualizar a documentação.</p>
 
 </div>
+
+
             
             <hr>            
             
@@ -316,32 +371,47 @@
 
   
   
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
     <ul class="pager">
       
         
         
         <li class="previous">
           <a href="/ETEControll/docs/visao_geral/">
-            <span aria-hidden="true">&larr;</span> Anterior
+            <span aria-hidden="true">←</span> Anterior
           </a>
         </li>
       
 
       
-        <li class="next disabled">
-          <a>
-            Próximo <span aria-hidden="true">&rarr;</span>
+        
+        
+        <li class="next">
+          <a href="/ETEControll/docs/arquitetura/modelo_dados/">
+            Próximo <span aria-hidden="true">→</span>
           </a>
         </li>
       
-    </div>
+    </ul>
+</div>
     <div class="clear"></div>
     
 
         </div>
         
     </div>
-</div>
+
         </div>
     </div>    
     <footer class="footer">

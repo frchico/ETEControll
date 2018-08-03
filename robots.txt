@@ -1,1 +1,1 @@
-Sitemap: https://saneamentoambiental.github.io/ETEControll/ETEControll/sitemap.xml
+Sitemap: http://localhost:4000/ETEControll/sitemap.xml

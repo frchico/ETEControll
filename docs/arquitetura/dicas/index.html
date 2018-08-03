@@ -16,23 +16,23 @@
     <link rel="shortcut icon" href="/ETEControll/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.4.0 -->
 <title>Dicas | ETEControll</title>
-<meta name="generator" content="Jekyll v3.4.3" />
+<meta name="generator" content="Jekyll v3.8.1" />
 <meta property="og:title" content="Dicas" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Dicas de implementação utilizando AspNetBoilerplate" />
 <meta property="og:description" content="Dicas de implementação utilizando AspNetBoilerplate" />
-<link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/dicas/" />
-<meta property="og:url" content="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/dicas/" />
+<link rel="canonical" href="http://localhost:4000/ETEControll/docs/arquitetura/dicas/" />
+<meta property="og:url" content="http://localhost:4000/ETEControll/docs/arquitetura/dicas/" />
 <meta property="og:site_name" content="ETEControll" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-05-15T01:54:39-04:00" />
+<meta property="article:published_time" content="2018-08-02T21:37:00-03:00" />
 <script type="application/ld+json">
-{"dateModified":"2018-05-15T01:54:39-04:00","datePublished":"2018-05-15T01:54:39-04:00","headline":"Dicas","url":"https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/dicas/","description":"Dicas de implementação utilizando AspNetBoilerplate","@type":"WebPage","@context":"http://schema.org"}</script>
+{"description":"Dicas de implementação utilizando AspNetBoilerplate","@type":"WebPage","url":"http://localhost:4000/ETEControll/docs/arquitetura/dicas/","headline":"Dicas","dateModified":"2018-08-02T21:37:00-03:00","datePublished":"2018-08-02T21:37:00-03:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/arquitetura/dicas/">
-    <link rel="alternate" type="application/rss+xml" title="ETEControll" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/feed.xml" />
+    <link rel="canonical" href="http://localhost:4000/ETEControll/docs/arquitetura/dicas/">
+    <link rel="alternate" type="application/rss+xml" title="ETEControll" href="http://localhost:4000/ETEControll/feed.xml" />
 </head>
 
 
@@ -139,11 +139,27 @@
         
           
           
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/unidade_tratamento/">Unidade de tratamento</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/parametro_unidade_tratamento/">Parâmetro de uma unidade de monitoramento</a>
+        
+          
+          
           <a class="list-group-item " href="/ETEControll/docs/documentacao/associacao_parametro_ete/">Associação de Parâmetros de uma ETE</a>
         
           
           
           <a class="list-group-item " href="/ETEControll/docs/documentacao/permissoes/">Segurança/Perfil de acesso</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/coleta_unidade_tratamento/">Coleta de dados de uma unidade de monitoramento</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/parametro_coletado_unidade_tratamento/">Coleta de parametros de uma unidade de tratamento</a>
         
       </ul>
     </div>
@@ -168,6 +184,10 @@
           
           <a class="list-group-item " href="/ETEControll/docs/arquitetura/preparacao_ambiente/">Preparação do ambiente</a>
         
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/arquitetura/modelo_dados/">Modelo de dados</a>
+        
       </ul>
     </div>
   </div>
@@ -177,11 +197,17 @@
         </div>
 
         <div class="col-md-8">
-            <h1>Dicas</h1><hr>
-            <div class="justify" id="markdown-content-container"><h2 id="dicas-de-implementação-utilizando-aspnetboilerplate">Dicas de implementação utilizando AspNetBoilerplate</h2>
+            <h1>Dicas</h1>
+<hr>
+            
+            <div class="justify" id="markdown-content-container">
+<h2 id="dicas-de-implementação-utilizando-aspnetboilerplate">Dicas de implementação utilizando AspNetBoilerplate</h2>
+
+<h4 id="videos">Videos</h4>
+<p>https://www.youtube.com/watch?v=5PKk-FLZ6EU</p>
 
 <h5 id="arquivos-de-localização">Arquivos de Localização</h5>
-<p>Os arquivos de Localização são utilizados para traduzir um label para os usuários. No sistema utlizaremos a <a href="https://www.aspnetboilerplate.com/Pages/Documents/Localization">API</a> para suportar mais de uma linguagem.</p>
+<p>Os arquivos de Localização são utilizados para traduzir um label para os usuários. No sistema utlizaremos a <a href="https://www.aspnetboilerplate.com/Pages/Documents/Localization" rel="nofollow" target="_blank">API</a> para suportar mais de uma linguagem.</p>
 
 <p>Serão criados arquivos em XML e a ordenação das chaves será por data de criação, ou seja, seguirá o proposto pela API</p>
 
@@ -189,7 +215,7 @@
   <p>If you use XML or JSON, we recommend you do not sort the texts by name. Sort them by creation date! This way, when someone translates it to another language, he/she can easily see which texts have been added recently.</p>
 </blockquote>
 
-<h5 id="usar-o-padrão-specifications-para-definir-regras-como">Usar o padrão <a href="https://www.aspnetboilerplate.com/Pages/Documents/Specifications">Specifications</a> para definir regras como:</h5>
+<h5 id="usar-o-padrão-specifications-para-definir-regras-como">Usar o padrão <a href="https://www.aspnetboilerplate.com/Pages/Documents/Specifications" rel="nofollow" target="_blank">Specifications</a> para definir regras como:</h5>
 
 <ul>
   <li>listar estações que estão com problemas;</li>
@@ -199,8 +225,10 @@
 <h5 id="configuração-do-timeout-de-uma-conexão">Configuração do timeout de uma conexão:</h5>
 
 <ul>
-  <li><a href="https://www.aspnetboilerplate.com/Pages/Documents/Unit-Of-Work">Exemplo</a>
-    <div class="highlighter-rouge"><pre class="highlight"><code>   public class SimpleTaskSystemCoreModule : AbpModule
+  <li>
+<a href="https://www.aspnetboilerplate.com/Pages/Documents/Unit-Of-Work" rel="nofollow" target="_blank">Exemplo</a>
+    <div class="highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>   public class SimpleTaskSystemCoreModule : AbpModule
    {
        public override void PreInitialize()
        {
@@ -210,44 +238,61 @@
 
    //...other module methods
    }
-</code></pre>
-    </div>
+</code></pre></div>    </div>
     <h5 id="filtrando-dados-de-um-determinado-usuário">Filtrando dados de um determinado usuário</h5>
   </li>
 </ul>
 
 <p>Util para fazer com que o usuário não possa ver os dados que outros criaram ou criar filtros de aplicação como limite de inserts
-    - <a href="https://github.com/zzzprojects/EntityFramework.DynamicFilters">API</a>
-    - <a href="https://www.aspnetboilerplate.com/Pages/Documents/Data-Filters">Exemplo de Implementação no sistema</a></p>
+    - <a href="https://github.com/zzzprojects/EntityFramework.DynamicFilters" rel="nofollow" target="_blank">API</a>
+    - <a href="https://www.aspnetboilerplate.com/Pages/Documents/Data-Filters" rel="nofollow" target="_blank">Exemplo de Implementação no sistema</a></p>
 
 <h5 id="adicionar-funcionalidades-ao-projeto">Adicionar funcionalidades ao projeto:</h5>
 
 <p>Permite validar a permissão se pode ou não exportar alguns dados. Ver como fazer essa personalização por usuário
-    - <a href="https://www.aspnetboilerplate.com/Pages/Documents/Feature-Management">Link</a>  <br />
-    - <a href="https://www.aspnetboilerplate.com/Pages/Documents/MVC-Views">Como usar as funcionalidades</a></p>
+    - <a href="https://www.aspnetboilerplate.com/Pages/Documents/Feature-Management" rel="nofollow" target="_blank">Link</a>  <br>
+    - <a href="https://www.aspnetboilerplate.com/Pages/Documents/MVC-Views" rel="nofollow" target="_blank">Como usar as funcionalidades</a></p>
 
 <h5 id="logomarca">Logomarca:</h5>
 
 <ul>
-  <li><a href="https://dribbble.com/search?q=logo">Ideias para logomarca/imagens</a></li>
+  <li><a href="https://dribbble.com/search?q=logo" rel="nofollow" target="_blank">Ideias para logomarca/imagens</a></li>
 </ul>
 
 <h5 id="código-de-conduta">Código de conduta</h5>
 
 <ul>
-  <li><a href="https://opensource.guide/code-of-conduct/">GitHub</a></li>
+  <li><a href="https://opensource.guide/code-of-conduct/" rel="nofollow" target="_blank">GitHub</a></li>
 </ul>
 
 <h5 id="auditoria">Auditoria:</h5>
 <ul>
-  <li><a href="https://www.aspnetboilerplate.com/Pages/Documents/Entity-History">Como fazer a auditoria</a></li>
+  <li><a href="https://www.aspnetboilerplate.com/Pages/Documents/Entity-History" rel="nofollow" target="_blank">Como fazer a auditoria</a></li>
   <li>Labels em uma ação que é auditada
     <ul>
-      <li>Util para vincular com caso de uso <a href="https://www.aspnetboilerplate.com/Pages/Documents/Entity-History#reason-property">Reason Property</a></li>
+      <li>Util para vincular com caso de uso <a href="https://www.aspnetboilerplate.com/Pages/Documents/Entity-History#reason-property" rel="nofollow" target="_blank">Reason Property</a>
+</li>
     </ul>
   </li>
 </ul>
+
+<h5 id="grid">GRID</h5>
+
+<ul>
+  <li>https://forum.aspnetboilerplate.com/viewtopic.php?p=6617</li>
+  <li>https://github.com/aspnetboilerplate/aspnetboilerplate/issues/2438</li>
+  <li>https://datatables.net/forums/discussion/40690/sample-implementation-of-serverside-processing-in-c-mvc-ef-with-paging-sorting-searching</li>
+  <li>https://shareurcodes.com/blog/dataTables%20server-side%20processing%20with%20custom%20parameters%20in%20codeigniter</li>
+</ul>
+
+<h5 id="ui-samples">UI Samples</h5>
+
+<ul>
+  <li>https://gurayyarar.github.io/AdminBSBMaterialDesign/pages/tables/jquery-datatable.html</li>
+</ul>
 </div>
+
+
             
             <hr>            
             
@@ -255,6 +300,21 @@
 
 
 
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
 
   
   
