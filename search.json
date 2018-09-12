@@ -168,8 +168,40 @@
     
     
     {
+      "title": "Fluxo de trabalho para o desenvolvedor",      
+      "url": "/ETEControll/docs/arquitetura/fluxo_desenvolvimento/",
+      "tags": "",
+      "keywords": "",      
+      "summary": ""
+    },
+  
+    
+    
+    {
       "title": "Modelo de dados",      
       "url": "/ETEControll/docs/arquitetura/modelo_dados/",
+      "tags": "",
+      "keywords": "",      
+      "summary": ""
+    },
+  
+
+  
+    
+    
+    {
+      "title": "Combobox com Ajax",      
+      "url": "/ETEControll/docs/dicas/combobox_com_ajax/",
+      "tags": "",
+      "keywords": "",      
+      "summary": ""
+    },
+  
+    
+    
+    {
+      "title": "Instruções para a Compilação",      
+      "url": "/ETEControll/docs/arquitetura/compilacao/",
       "tags": "",
       "keywords": "",      
       "summary": ""

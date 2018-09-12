@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Combobox com Ajax</title>
+    <meta name="description" content="O problema">
+
+
+    <link rel="stylesheet" href="/ETEControll/css/main.css">
+    <link rel="stylesheet" href="/ETEControll/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/ETEControll/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Combobox com Ajax | ETEControll</title>
+<meta name="generator" content="Jekyll v3.8.1" />
+<meta property="og:title" content="Combobox com Ajax" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="O problema" />
+<meta property="og:description" content="O problema" />
+<link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/dicas/combobox_com_ajax/" />
+<meta property="og:url" content="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/dicas/combobox_com_ajax/" />
+<meta property="og:site_name" content="ETEControll" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-09-12T17:19:17-03:00" />
+<script type="application/ld+json">
+{"description":"O problema","@type":"WebPage","url":"https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/dicas/combobox_com_ajax/","headline":"Combobox com Ajax","dateModified":"2018-09-12T17:19:17-03:00","datePublished":"2018-09-12T17:19:17-03:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/dicas/combobox_com_ajax/">
+    <link rel="alternate" type="application/rss+xml" title="ETEControll" href="https://saneamentoambiental.github.io/ETEControll/ETEControll/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/ETEControll/">
+                <span><img src="/ETEControll/img/logonav.png"></span> ETEControll
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li  class="active" ><a href="/ETEControll/docs/home/">Sobre o Projeto</a></li>
+                
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="text" class="form-control" placeholder="Procurar...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href="https://github.com/saneamentoambiental/ETEControll"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+          Sobre o projeto
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/home/">Introdução</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/justificativa/">Justificativa</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/objetivo/">Objetivo Geral</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/metodologia/">Metodologia</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/parceria/">Parcerias</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/resultado_esperado/">Resultados esperados</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+          Análise do sistema
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/ete/">Estação de tratamento de Efluentes</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/parametros/">Parâmetros</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/unidade_tratamento/">Unidade de tratamento</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/parametro_unidade_tratamento/">Parâmetro de uma unidade de monitoramento</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/associacao_parametro_ete/">Associação de Parâmetros de uma ETE</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/permissoes/">Segurança/Perfil de acesso</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/coleta_unidade_tratamento/">Coleta de dados de uma unidade de monitoramento</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/documentacao/parametro_coletado_unidade_tratamento/">Coleta de parametros de uma unidade de tratamento</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+          Arquitetura
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/visao_geral/">Visão Geral</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/arquitetura/preparacao_ambiente/">Preparação do ambiente</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/arquitetura/fluxo_desenvolvimento/">Fluxo de trabalho para o desenvolvedor</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/arquitetura/modelo_dados/">Modelo de dados</a>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+          Dicas
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <ul class="list-group">
+        
+          
+          
+          <a class="list-group-item active" href="/ETEControll/docs/dicas/combobox_com_ajax/">Combobox com Ajax</a>
+        
+          
+          
+          <a class="list-group-item " href="/ETEControll/docs/arquitetura/compilacao/">Instruções para a Compilação</a>
+        
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h1>Combobox com Ajax</h1>
+<hr>
+            
+            <div class="justify" id="markdown-content-container">
+<ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#o-problema">O problema</a></li>
+<li class="toc-entry toc-h2">
+<a href="#resolu%C3%A7%C3%A3o-para-telas-de-createedit">Resolução para telas de Create/edit</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#criar-um-m%C3%A9todo-no-service-para-retornar-uma-lista-de-dto">Criar um método no service para retornar uma lista de DTO.</a></li>
+<li class="toc-entry toc-h4"><a href="#fazer-com-que-o-controller-utilize-o-m%C3%A9todo-definido-no-service">Fazer com que o controller utilize o método definido no service</a></li>
+<li class="toc-entry toc-h4"><a href="#alterar-os-dto-incluindo-as-propriedades-necess%C3%A1rias">Alterar os DTO incluindo as propriedades necessárias</a></li>
+<li class="toc-entry toc-h4"><a href="#adicionar-o-campo-na-view-do-tipo-select">Adicionar o campo na view do tipo select</a></li>
+<li class="toc-entry toc-h4"><a href="#adicionar-a-chamada-ajax-no-js">Adicionar a chamada AJAX no JS</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#resolu%C3%A7%C3%A3o-para-telas-com-grid">Resolução para telas com grid</a></li>
+<li class="toc-entry toc-h2"><a href="#refer%C3%AAncias">Referências</a></li>
+</ul>
+<h2 id="o-problema">
+<a id="o-problema" class="anchor" href="#o-problema" aria-hidden="true"><span class="octicon octicon-link"></span></a>O problema</h2>
+
+<div class="bs-callout bs-callout-">Você precisa exibir/associar o usuário (apenas um) que está responsável por uma estação de tratamento. Além disso, a tela deverá oferecer um módulo busca, para filtrar os dados para a escolha do usuário.</div>
+
+<p>Nosso <code class="highlighter-rouge">Entity</code> seria definido assim:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">EstacaoTratamento</span> <span class="p">:</span> <span class="n">Entidade</span>
+<span class="p">{</span>
+    <span class="err">#</span><span class="n">region</span> <span class="n">Constantes</span>
+        <span class="k">public</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">NomeMaxLength</span> <span class="p">=</span> <span class="m">150</span><span class="p">;</span>
+    <span class="err">#</span><span class="n">endregion</span>
+    <span class="err">#</span><span class="n">region</span> <span class="n">Atributos</span> <span class="k">do</span> <span class="n">Banco</span>
+        <span class="p">[</span><span class="n">Required</span><span class="p">,</span> <span class="nf">StringLength</span><span class="p">(</span><span class="n">NomeMaxLength</span><span class="p">)]</span>
+        <span class="k">public</span> <span class="n">String</span> <span class="n">Nome</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">float</span><span class="p">?</span> <span class="n">Latitude</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">float</span><span class="p">?</span> <span class="n">Longitude</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">long</span><span class="p">?</span> <span class="n">RespTecnicoId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="err">#</span><span class="n">endregion</span>
+
+    <span class="err">#</span><span class="n">region</span> <span class="n">Chaves</span> <span class="n">Estrangeiras</span>
+        <span class="p">[</span><span class="nf">ForeignKey</span><span class="p">(</span><span class="s">"RespTecnicoId"</span><span class="p">)]</span>
+        <span class="k">public</span> <span class="n">User</span> <span class="n">RespTecnico</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="err">#</span><span class="n">endregion</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="resolução-para-telas-de-createedit">
+<a id="resolução-para-telas-de-createedit" class="anchor" href="#resolu%C3%A7%C3%A3o-para-telas-de-createedit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resolução para telas de Create/edit</h2>
+
+<ol>
+  <li>
+    <h4 id="criar-um-método-no-service-para-retornar-uma-lista-de-dto">
+<a id="criar-um-método-no-service-para-retornar-uma-lista-de-dto" class="anchor" href="#criar-um-m%C3%A9todo-no-service-para-retornar-uma-lista-de-dto" aria-hidden="true"><span class="octicon octicon-link"></span></a>Criar um método no <code class="highlighter-rouge">service</code> para retornar uma lista de <code class="highlighter-rouge">DTO</code>.</h4>
+
+    <p>Este método será utilizado pelo <code class="highlighter-rouge">controller</code> quando o usuário quiser filtrar os dados da tela.</p>
+
+    <div class="language-cs highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">UserDto</span><span class="p">&gt;&gt;</span> <span class="nf">GetUsersBy</span><span class="p">(</span><span class="kt">string</span> <span class="n">nameOrEmail</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="kt">var</span> <span class="n">usersquery</span> <span class="p">=</span> <span class="n">Repository</span><span class="p">.</span><span class="nf">GetAll</span><span class="p">()</span>
+         <span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">u</span> <span class="p">=&gt;</span>
+             <span class="n">u</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="n">nameOrEmail</span><span class="p">)</span> <span class="p">||</span> <span class="n">u</span><span class="p">.</span><span class="n">EmailAddress</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="n">nameOrEmail</span><span class="p">)</span>
+     <span class="p">);</span>
+     <span class="kt">var</span> <span class="n">users</span> <span class="p">=</span> <span class="k">await</span> <span class="n">usersquery</span><span class="p">.</span><span class="nf">ToListAsync</span><span class="p">();</span>
+
+     <span class="k">return</span> <span class="n">ObjectMapper</span><span class="p">.</span><span class="n">Map</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">UserDto</span><span class="p">&gt;&gt;(</span><span class="n">users</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <h4 id="fazer-com-que-o-controller-utilize-o-método-definido-no-service">
+<a id="fazer-com-que-o-controller-utilize-o-método-definido-no-service" class="anchor" href="#fazer-com-que-o-controller-utilize-o-m%C3%A9todo-definido-no-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fazer com que o <code class="highlighter-rouge">controller</code> utilize o método definido no <code class="highlighter-rouge">service</code>
+</h4>
+
+    <p>No nosso caso o método responsável por montar a tela de edição (<em>view</em> <code class="highlighter-rouge">_createOrEdit.cshtml</code>) é o <code class="highlighter-rouge">public async Task&lt;ViewResult&gt; CreateOrEdit(int? id)</code>.</p>
+
+    <p>Este método, quando invocado, retorna um elemento do tipo <code class="highlighter-rouge">CreateOrEditEstacaoTratamentoModalViewModel</code>.</p>
+
+    <p>Assim, nosso método é definido como:</p>
+
+    <div class="language-cs highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">ViewResult</span><span class="p">&gt;</span> <span class="nf">CreateOrEdit</span><span class="p">(</span><span class="kt">int</span><span class="p">?</span> <span class="n">id</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="n">GetEstacaoTratamentoForEditOutput</span> <span class="n">getEstacaoTratamentoForEditOutput</span><span class="p">;</span>
+     <span class="c1">//para editar</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">id</span><span class="p">.</span><span class="n">HasValue</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="n">getEstacaoTratamentoForEditOutput</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_estacaoTratamentoAppService</span><span class="p">.</span><span class="nf">GetEstacaoTratamentoForEdit</span><span class="p">(</span><span class="k">new</span> <span class="n">EntityDto</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">Id</span> <span class="p">=</span> <span class="n">id</span><span class="p">.</span><span class="n">Value</span> <span class="p">});</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">getEstacaoTratamentoForEditOutput</span><span class="p">.</span><span class="n">EstacaoTratamento</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+         <span class="p">{</span>
+             <span class="k">throw</span> <span class="k">new</span> <span class="nf">UserFriendlyException</span><span class="p">(</span><span class="m">404</span><span class="p">,</span> <span class="nf">L</span><span class="p">(</span><span class="s">"ItemNotFound"</span><span class="p">));</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+     <span class="k">else</span> <span class="c1">//novo</span>
+     <span class="p">{</span>
+         <span class="n">getEstacaoTratamentoForEditOutput</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GetEstacaoTratamentoForEditOutput</span>
+         <span class="p">{</span>
+             <span class="n">EstacaoTratamento</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CreateOrEditEstacaoTratamentoInput</span><span class="p">()</span>
+         <span class="p">};</span>
+     <span class="p">}</span>
+
+     <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CreateOrEditEstacaoTratamentoModalViewModel</span><span class="p">()</span>
+     <span class="p">{</span>
+         <span class="n">EstacaoTratamento</span> <span class="p">=</span> <span class="n">getEstacaoTratamentoForEditOutput</span><span class="p">.</span><span class="n">EstacaoTratamento</span>
+     <span class="p">};</span>
+     <span class="c1">//Como o responsável técnico não é obrigatório, então precisamos verificar se tem algum valor</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">getEstacaoTratamentoForEditOutput</span><span class="p">.</span><span class="n">EstacaoTratamento</span><span class="p">.</span><span class="n">RespTecnicoId</span><span class="p">.</span><span class="n">HasValue</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="kt">var</span> <span class="n">responsavelTecnico</span> <span class="p">=</span> <span class="n">_userAppService</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="k">new</span> <span class="n">EntityDto</span><span class="p">&lt;</span><span class="kt">long</span><span class="p">&gt;(</span><span class="n">getEstacaoTratamentoForEditOutput</span><span class="p">.</span><span class="n">EstacaoTratamento</span><span class="p">.</span><span class="n">RespTecnicoId</span><span class="p">.</span><span class="n">Value</span><span class="p">)).</span><span class="n">Result</span><span class="p">;</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">responsavelTecnico</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+         <span class="p">{</span>
+             <span class="n">viewModel</span><span class="p">.</span><span class="n">Responsaveis</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">SelectListItem</span><span class="p">&gt;();</span>
+             <span class="n">viewModel</span><span class="p">.</span><span class="n">Responsaveis</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span>
+                 <span class="k">new</span> <span class="nf">SelectListItem</span><span class="p">(</span><span class="n">responsavelTecnico</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">responsavelTecnico</span><span class="p">.</span><span class="n">Id</span><span class="p">.</span><span class="nf">ToString</span><span class="p">(),</span><span class="k">true</span><span class="p">)</span>
+             <span class="p">);</span>
+         <span class="p">}</span>
+         <span class="k">else</span>
+         <span class="p">{</span>
+             <span class="k">throw</span> <span class="k">new</span> <span class="nf">UserFriendlyException</span><span class="p">(</span><span class="m">404</span><span class="p">,</span> <span class="nf">L</span><span class="p">(</span><span class="s">"EstacaoTratamento.RespTecnico.NotFound"</span><span class="p">));</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+     <span class="k">return</span> <span class="nf">View</span><span class="p">(</span><span class="s">"_CreateOrEdit"</span><span class="p">,</span> <span class="n">viewModel</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <h4 id="alterar-os-dto-incluindo-as-propriedades-necessárias">
+<a id="alterar-os-dto-incluindo-as-propriedades-necessárias" class="anchor" href="#alterar-os-dto-incluindo-as-propriedades-necess%C3%A1rias" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alterar os <code class="highlighter-rouge">DTO</code> incluindo as propriedades necessárias</h4>
+
+    <ul>
+      <li><code class="highlighter-rouge">CreateOrEditEstacaoTratamentoModalViewModel</code></li>
+    </ul>
+
+    <div class="language-cs highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="k">public</span> <span class="k">class</span> <span class="nc">CreateOrEditEstacaoTratamentoModalViewModel</span>
+ <span class="p">{</span>
+     <span class="k">public</span> <span class="n">CreateOrEditEstacaoTratamentoInput</span> <span class="n">EstacaoTratamento</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+     <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsEditMode</span> <span class="p">=&gt;</span> <span class="n">EstacaoTratamento</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">EstacaoTratamento</span><span class="p">.</span><span class="n">Id</span> <span class="p">!=</span> <span class="k">null</span><span class="p">;</span>
+     <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">SelectListItem</span><span class="p">&gt;</span> <span class="n">Responsaveis</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li><code class="highlighter-rouge">CreateOrEditEstacaoTratamentoInput</code></li>
+    </ul>
+
+    <div class="language-cs highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="na">[AutoMapTo(typeof(EstacaoTratamento))]</span>
+ <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">CreateOrEditEstacaoTratamentoInput</span>
+ <span class="p">{</span>
+     <span class="k">public</span> <span class="kt">int</span><span class="p">?</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+     <span class="p">[</span><span class="n">Required</span><span class="p">]</span>
+     <span class="p">[</span><span class="nf">StringLength</span><span class="p">(</span><span class="n">EstacaoTratamento</span><span class="p">.</span><span class="n">NomeMaxLength</span><span class="p">)]</span>
+     <span class="k">public</span> <span class="kt">string</span> <span class="n">Nome</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+     <span class="k">public</span> <span class="n">Single</span><span class="p">?</span> <span class="n">Latitude</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+     <span class="k">public</span> <span class="n">Single</span><span class="p">?</span> <span class="n">Longitude</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+     <span class="k">public</span> <span class="kt">long</span><span class="p">?</span> <span class="n">RespTecnicoId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <h4 id="adicionar-o-campo-na-view-do-tipo-select">
+<a id="adicionar-o-campo-na-view-do-tipo-select" class="anchor" href="#adicionar-o-campo-na-view-do-tipo-select" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adicionar o campo na <code class="highlighter-rouge">view</code> do tipo <code class="highlighter-rouge">select</code>
+</h4>
+
+    <pre><code class="language-HTML"> &lt;div class="col-sm-12"&gt;
+     &lt;div class="form-group"&gt;
+         &lt;div class="form-line"&gt;
+             &lt;label for="RespTecnico" class="form-label"&gt;@L("EstacaoTratamento.RespTecnico")&lt;/label&gt;
+         &lt;/div&gt;
+         &lt;br /&gt;
+         &lt;br /&gt;
+         &lt;div class="form-line"&gt;
+             &lt;select id="RespTecnico"
+                     name="RespTecnicoId"
+                     asp-for="EstacaoTratamento.RespTecnicoId"
+                     asp-items="Model.Responsaveis"
+                     class="form-control"
+                     title="Escolha um @L("EstacaoTratamento.RespTecnico")"
+                     data-live-search="true"&gt;&lt;/select&gt;
+         &lt;/div&gt;
+     &lt;/div&gt;
+ &lt;/div&gt;
+</code></pre>
+    <p>Note que:</p>
+    <ul>
+      <li>
+<code class="highlighter-rouge">id="RespTecnico"</code> será utilizado pelo <em>Javascript</em> para realizra as consultas ajax;</li>
+      <li>
+<code class="highlighter-rouge">name="RespTecnicoId"</code> valor que será enviado no JSON na requisição de salvar/editar;</li>
+      <li>
+<code class="highlighter-rouge">asp-for="EstacaoTratamento.RespTecnicoId"</code> é o campo que contém o valor inicial a ser selecionado;</li>
+      <li>
+<code class="highlighter-rouge">asp-items="Model.Responsaveis"</code> é a coleção com os valores a serem exibidos inicialmente (no caso de alteração será adicionado o responsável que foi coletado previamente);</li>
+      <li>
+<code class="highlighter-rouge">data-live-search="true"</code> informa que o campo é “pesquisável”;</li>
+    </ul>
+  </li>
+  <li>
+    <h4 id="adicionar-a-chamada-ajax-no-js">
+<a id="adicionar-a-chamada-ajax-no-js" class="anchor" href="#adicionar-a-chamada-ajax-no-js" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adicionar a chamada AJAX no JS</h4>
+
+    <p>No arquivo <code class="highlighter-rouge">_CreateOrEdit.js</code> adicione a chamada JS para configurar o componente com AJAX.</p>
+
+    <div class="language-js highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+         <span class="cm">/** Omitido */</span>
+         <span class="nx">$</span><span class="p">(</span><span class="s1">'#RespTecnico'</span><span class="p">).</span><span class="nx">ajaxSelectPicker</span><span class="p">({</span>
+             <span class="na">minLength</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+             <span class="na">ajax</span><span class="p">:</span> <span class="p">{</span>
+                 <span class="na">url</span><span class="p">:</span> <span class="nx">abp</span><span class="p">.</span><span class="nx">appPath</span> <span class="o">+</span> <span class="s1">'ETESystem/EstacaoTratamento/GetUsersBy'</span><span class="p">,</span>
+                 <span class="na">type</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+                 <span class="na">dataType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span>
+                 <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="na">userNameOrEmail</span><span class="p">:</span> <span class="s1">'{ { { q } } }'</span> <span class="c1">//Remova os espaços entre as chaves</span>
+                 <span class="p">}</span>
+             <span class="p">},</span>
+             <span class="na">preprocessData</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                 <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">l</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[];</span>
+                 <span class="k">if</span> <span class="p">(</span><span class="nx">l</span><span class="p">)</span> <span class="p">{</span>
+                     <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">l</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                         <span class="nx">array</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="p">{</span>
+                             <span class="na">text</span><span class="p">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="p">,</span>
+                             <span class="na">value</span><span class="p">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span><span class="p">,</span>
+                             <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                                 <span class="na">subtext</span><span class="p">:</span> <span class="nx">data</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">emailAddress</span>
+                             <span class="p">}</span>
+                         <span class="p">}));</span>
+                     <span class="p">}</span>
+                 <span class="p">}</span>
+                 <span class="k">return</span> <span class="nx">array</span><span class="p">;</span>
+             <span class="p">}</span>
+
+         <span class="p">});</span>
+         <span class="cm">/** Omitido */</span>
+     <span class="p">});</span>
+ <span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<hr>
+
+<h2 id="resolução-para-telas-com-grid">
+<a id="resolução-para-telas-com-grid" class="anchor" href="#resolu%C3%A7%C3%A3o-para-telas-com-grid" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resolução para telas com grid</h2>
+
+<p>Caso necessite exibir algum dado de uma entidade relacionada, como por exemplo os dados do usuário que é responsável pela <code class="highlighter-rouge">Estação de Tratamento</code>, adicione o seguinte código no método do <code class="highlighter-rouge">service</code> que retorna os dados para o <code class="highlighter-rouge">DTO</code>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">PagedResultDto</span><span class="p">&lt;</span><span class="n">EstacaoTratamentoListDto</span><span class="p">&gt;&gt;</span> <span class="nf">GetAll</span><span class="p">(</span><span class="n">GetEstacaoTratamentoInput</span> <span class="n">input</span><span class="p">)</span>
+<span class="p">{</span>
+
+    <span class="kt">var</span> <span class="n">query</span> <span class="p">=</span> <span class="nf">CreateEstacaoTratamentoQuery</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
+    <span class="n">query</span> <span class="p">=</span> <span class="n">query</span><span class="p">.</span><span class="nf">Include</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">RespTecnico</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">resultCount</span> <span class="p">=</span> <span class="k">await</span> <span class="n">query</span><span class="p">.</span><span class="nf">CountAsync</span><span class="p">();</span>
+    <span class="kt">var</span> <span class="n">results</span> <span class="p">=</span> <span class="k">await</span> <span class="n">query</span>
+        <span class="p">.</span><span class="nf">OrderBy</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">Sorting</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">PageBy</span><span class="p">(</span><span class="n">input</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">ToListAsync</span><span class="p">();</span>
+
+    <span class="c1">//Exemplo de como alterar o mapeamento para uma view</span>
+    <span class="kt">var</span> <span class="n">config</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MapperConfiguration</span><span class="p">(</span>
+        <span class="n">cfg</span> <span class="p">=&gt;</span> <span class="n">cfg</span><span class="p">.</span><span class="n">CreateMap</span><span class="p">&lt;</span><span class="n">EstacaoTratamento</span><span class="p">,</span>
+        <span class="n">EstacaoTratamentoListDto</span><span class="p">&gt;()</span>
+        <span class="c1">//Ao invés de retornar o Name do usuário, o campo é preenchido como FullName</span>
+        <span class="p">.</span><span class="nf">ForMember</span><span class="p">(</span><span class="n">d</span> <span class="p">=&gt;</span> <span class="n">d</span><span class="p">.</span><span class="n">RespTecnicoName</span><span class="p">,</span> <span class="n">o</span> <span class="p">=&gt;</span> <span class="n">o</span><span class="p">.</span><span class="nf">MapFrom</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">RespTecnico</span><span class="p">.</span><span class="n">FullName</span><span class="p">))</span>
+    <span class="p">);</span>
+    <span class="kt">var</span> <span class="n">m</span> <span class="p">=</span> <span class="n">config</span><span class="p">.</span><span class="nf">CreateMapper</span><span class="p">();</span>
+    <span class="kt">var</span> <span class="n">y</span> <span class="p">=</span> <span class="n">m</span><span class="p">.</span><span class="n">Map</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">EstacaoTratamento</span><span class="p">&gt;,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">EstacaoTratamentoListDto</span><span class="p">&gt;&gt;(</span><span class="n">results</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="k">new</span> <span class="n">PagedResultDto</span><span class="p">&lt;</span><span class="n">EstacaoTratamentoListDto</span><span class="p">&gt;(</span><span class="n">resultCount</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>No <em>Javascript</em> do <code class="highlighter-rouge">grid</code> use <code class="highlighter-rouge">&lt;Entidade&gt;.&lt;Propriedade&gt;</code> em <code class="highlighter-rouge">camelCase</code>.</p>
+
+<hr>
+<h2 id="referências">
+<a id="referências" class="anchor" href="#refer%C3%AAncias" aria-hidden="true"><span class="octicon octicon-link"></span></a>Referências</h2>
+
+<p>Para maiores detalhes consulte:</p>
+
+<ul>
+  <li><a href="https://automapper.readthedocs.io/en/latest/Custom-value-resolvers.html" rel="nofollow" target="_blank">https://automapper.readthedocs.io/en/latest/Custom-value-resolvers.html</a></li>
+  <li><a href="https://automapper.readthedocs.io/en/latest/Lists-and-arrays.html" rel="nofollow" target="_blank">https://automapper.readthedocs.io/en/latest/Lists-and-arrays.html</a></li>
+  <li><a href="https://aspnetboilerplate.com/Pages/Documents/Data-Transfer-Objects" rel="nofollow" target="_blank">https://aspnetboilerplate.com/Pages/Documents/Data-Transfer-Objects</a></li>
+  <li><a href="http://www.4answered.com/questions/view/20caf3c/bootstrap-select-options-not-appearing-in-dropdown" rel="nofollow" target="_blank">http://www.4answered.com/questions/view/20caf3c/bootstrap-select-options-not-appearing-in-dropdown</a></li>
+  <li><a href="https://celsokitamura.com.br/pascal-case-e-camel-case/" rel="nofollow" target="_blank">https://celsokitamura.com.br/pascal-case-e-camel-case/</a></li>
+  <li><a href="https://www.jqueryscript.net/form/Bootstrap-Dropdown-Select-Enhancement-Plugin-jQuery.html" rel="nofollow" target="_blank">https://www.jqueryscript.net/form/Bootstrap-Dropdown-Select-Enhancement-Plugin-jQuery.html</a></li>
+  <li><a href="https://www.jqueryscript.net/form/AJAX-Autocomplete-Bootstrap-Select.html" rel="nofollow" target="_blank">https://www.jqueryscript.net/form/AJAX-Autocomplete-Bootstrap-Select.html</a></li>
+</ul>
+</div>
+
+
+            
+            <hr>            
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/ETEControll/docs/arquitetura/modelo_dados/">
+            <span aria-hidden="true">←</span> Anterior
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/ETEControll/docs/arquitetura/compilacao/">
+            Próximo <span aria-hidden="true">→</span>
+          </a>
+        </li>
+      
+    </ul>
+</div>
+    <div class="clear"></div>
+    
+
+        </div>
+        
+    </div>
+
+        </div>
+    </div>    
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            ETEControll 2018 |
+            Produzido com <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = '/ETEControll'
+</script>
+<script
+src="https://code.jquery.com/jquery-1.12.4.min.js"
+integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+crossorigin="anonymous"></script>
+<script src="/ETEControll/js/bootstrap.min.js "></script>
+<script src="/ETEControll/js/typeahead.bundle.min.js "></script>
+
+<script src="/ETEControll/js/main.js "></script>
+
+</body>
+
+</html>
