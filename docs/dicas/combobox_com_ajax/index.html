@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/ETEControll/css/font-awesome.min.css">
 
     <link rel="shortcut icon" href="/ETEControll/favicon.ico?1">
-    <!-- Begin Jekyll SEO tag v2.4.0 -->
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>Combobox com Ajax | ETEControll</title>
 <meta name="generator" content="Jekyll v3.8.1" />
 <meta property="og:title" content="Combobox com Ajax" />
@@ -25,9 +25,9 @@
 <meta property="og:url" content="https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/dicas/combobox_com_ajax/" />
 <meta property="og:site_name" content="ETEControll" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-09-12T17:19:17-03:00" />
+<meta property="article:published_time" content="2018-11-08T16:21:24-03:00" />
 <script type="application/ld+json">
-{"description":"O problema","@type":"WebPage","url":"https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/dicas/combobox_com_ajax/","headline":"Combobox com Ajax","dateModified":"2018-09-12T17:19:17-03:00","datePublished":"2018-09-12T17:19:17-03:00","@context":"http://schema.org"}</script>
+{"url":"https://saneamentoambiental.github.io/ETEControll/ETEControll/docs/dicas/combobox_com_ajax/","description":"O problema","headline":"Combobox com Ajax","dateModified":"2018-11-08T16:21:24-03:00","datePublished":"2018-11-08T16:21:24-03:00","@type":"WebPage","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -246,7 +246,7 @@
 <h2 id="o-problema">
 <a id="o-problema" class="anchor" href="#o-problema" aria-hidden="true"><span class="octicon octicon-link"></span></a>O problema</h2>
 
-<div class="bs-callout bs-callout-">Você precisa exibir/associar o usuário (apenas um) que está responsável por uma estação de tratamento. Além disso, a tela deverá oferecer um módulo busca, para filtrar os dados para a escolha do usuário.</div>
+<div class="bs-callout bs-callout-">Você precisa exibir/associar um e apenas um usuário que está responsável por uma estação de tratamento. Além disso, a tela deverá oferecer um módulo busca, para filtrar os dados para a escolha do usuário.</div>
 
 <p>Nosso <code class="highlighter-rouge">Entity</code> seria definido assim:</p>
 
@@ -307,23 +307,19 @@
     <div class="language-cs highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code> <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">ViewResult</span><span class="p">&gt;</span> <span class="nf">CreateOrEdit</span><span class="p">(</span><span class="kt">int</span><span class="p">?</span> <span class="n">id</span><span class="p">)</span>
  <span class="p">{</span>
-     <span class="n">GetEstacaoTratamentoForEditOutput</span> <span class="n">getEstacaoTratamentoForEditOutput</span><span class="p">;</span>
+     <span class="n">GetEstacaoTratamentoForEditOutput</span> <span class="n">getEstacaoTratamentoForEditOutput</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GetEstacaoTratamentoForEditOutput</span>
+         <span class="p">{</span>
+             <span class="n">EstacaoTratamento</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">EstacaoTratamentoDto</span><span class="p">()</span>
+         <span class="p">};</span>
      <span class="c1">//para editar</span>
      <span class="k">if</span> <span class="p">(</span><span class="n">id</span><span class="p">.</span><span class="n">HasValue</span><span class="p">)</span>
      <span class="p">{</span>
-         <span class="n">getEstacaoTratamentoForEditOutput</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_estacaoTratamentoAppService</span><span class="p">.</span><span class="nf">GetEstacaoTratamentoForEdit</span><span class="p">(</span><span class="k">new</span> <span class="n">EntityDto</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">Id</span> <span class="p">=</span> <span class="n">id</span><span class="p">.</span><span class="n">Value</span> <span class="p">});</span>
+         <span class="n">getEstacaoTratamentoForEditOutput</span><span class="p">.</span><span class="n">EstacaoTratamento</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_estacaoTratamentoAppService</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="k">new</span> <span class="n">EntityDto</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">Id</span> <span class="p">=</span> <span class="n">id</span><span class="p">.</span><span class="n">Value</span> <span class="p">});</span>
          <span class="k">if</span> <span class="p">(</span><span class="n">getEstacaoTratamentoForEditOutput</span><span class="p">.</span><span class="n">EstacaoTratamento</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
          <span class="p">{</span>
              <span class="k">throw</span> <span class="k">new</span> <span class="nf">UserFriendlyException</span><span class="p">(</span><span class="m">404</span><span class="p">,</span> <span class="nf">L</span><span class="p">(</span><span class="s">"ItemNotFound"</span><span class="p">));</span>
          <span class="p">}</span>
-     <span class="p">}</span>
-     <span class="k">else</span> <span class="c1">//novo</span>
-     <span class="p">{</span>
-         <span class="n">getEstacaoTratamentoForEditOutput</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GetEstacaoTratamentoForEditOutput</span>
-         <span class="p">{</span>
-             <span class="n">EstacaoTratamento</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CreateOrEditEstacaoTratamentoInput</span><span class="p">()</span>
-         <span class="p">};</span>
-     <span class="p">}</span>
+     <span class="p">}</span>       
 
      <span class="kt">var</span> <span class="n">viewModel</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">CreateOrEditEstacaoTratamentoModalViewModel</span><span class="p">()</span>
      <span class="p">{</span>
@@ -354,6 +350,23 @@
 <a id="alterar-os-dto-incluindo-as-propriedades-necessárias" class="anchor" href="#alterar-os-dto-incluindo-as-propriedades-necess%C3%A1rias" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alterar os <code class="highlighter-rouge">DTO</code> incluindo as propriedades necessárias</h4>
 
     <ul>
+      <li><code class="highlighter-rouge">CreateOrEditEstacaoTratamentoInput</code></li>
+    </ul>
+
+    <div class="language-cs highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="na">[AutoMapTo(typeof(EstacaoTratamento))]</span>
+ <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">CreateOrEditEstacaoTratamentoInput</span> <span class="p">:</span> <span class="n">IEntityDto</span>
+ <span class="p">{</span>
+     <span class="k">public</span> <span class="kt">int</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+     <span class="p">[</span><span class="n">Required</span><span class="p">]</span>
+     <span class="p">[</span><span class="nf">StringLength</span><span class="p">(</span><span class="n">EstacaoTratamento</span><span class="p">.</span><span class="n">NomeMaxLength</span><span class="p">)]</span>
+     <span class="k">public</span> <span class="kt">string</span> <span class="n">Nome</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+     <span class="k">public</span> <span class="n">Single</span><span class="p">?</span> <span class="n">Latitude</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+     <span class="k">public</span> <span class="n">Single</span><span class="p">?</span> <span class="n">Longitude</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+     <span class="k">public</span> <span class="kt">long</span><span class="p">?</span> <span class="n">RespTecnicoId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
       <li><code class="highlighter-rouge">CreateOrEditEstacaoTratamentoModalViewModel</code></li>
     </ul>
 
@@ -361,25 +374,8 @@
 <div class="highlight"><pre class="highlight"><code> <span class="k">public</span> <span class="k">class</span> <span class="nc">CreateOrEditEstacaoTratamentoModalViewModel</span>
  <span class="p">{</span>
      <span class="k">public</span> <span class="n">CreateOrEditEstacaoTratamentoInput</span> <span class="n">EstacaoTratamento</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-     <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsEditMode</span> <span class="p">=&gt;</span> <span class="n">EstacaoTratamento</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">EstacaoTratamento</span><span class="p">.</span><span class="n">Id</span> <span class="p">!=</span> <span class="k">null</span><span class="p">;</span>
+     <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsEditMode</span> <span class="p">=&gt;</span> <span class="n">EstacaoTratamento</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">EstacaoTratamento</span><span class="p">.</span><span class="n">Id</span> <span class="p">!=</span> <span class="m">0</span><span class="p">;</span>
      <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">SelectListItem</span><span class="p">&gt;</span> <span class="n">Responsaveis</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
- <span class="p">}</span>
-</code></pre></div>    </div>
-    <ul>
-      <li><code class="highlighter-rouge">CreateOrEditEstacaoTratamentoInput</code></li>
-    </ul>
-
-    <div class="language-cs highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="na">[AutoMapTo(typeof(EstacaoTratamento))]</span>
- <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">CreateOrEditEstacaoTratamentoInput</span>
- <span class="p">{</span>
-     <span class="k">public</span> <span class="kt">int</span><span class="p">?</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-     <span class="p">[</span><span class="n">Required</span><span class="p">]</span>
-     <span class="p">[</span><span class="nf">StringLength</span><span class="p">(</span><span class="n">EstacaoTratamento</span><span class="p">.</span><span class="n">NomeMaxLength</span><span class="p">)]</span>
-     <span class="k">public</span> <span class="kt">string</span> <span class="n">Nome</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-     <span class="k">public</span> <span class="n">Single</span><span class="p">?</span> <span class="n">Latitude</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-     <span class="k">public</span> <span class="n">Single</span><span class="p">?</span> <span class="n">Longitude</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-     <span class="k">public</span> <span class="kt">long</span><span class="p">?</span> <span class="n">RespTecnicoId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
  <span class="p">}</span>
 </code></pre></div>    </div>
   </li>
@@ -432,6 +428,7 @@
      <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
          <span class="cm">/** Omitido */</span>
          <span class="nx">$</span><span class="p">(</span><span class="s1">'#RespTecnico'</span><span class="p">).</span><span class="nx">ajaxSelectPicker</span><span class="p">({</span>
+             <span class="na">preserveSelected</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> 
              <span class="na">minLength</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
              <span class="na">ajax</span><span class="p">:</span> <span class="p">{</span>
                  <span class="na">url</span><span class="p">:</span> <span class="nx">abp</span><span class="p">.</span><span class="nx">appPath</span> <span class="o">+</span> <span class="s1">'ETESystem/EstacaoTratamento/GetUsersBy'</span><span class="p">,</span>
@@ -462,17 +459,18 @@
      <span class="p">});</span>
  <span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
 </code></pre></div>    </div>
+    <p>Observe que o parâmetro <code class="highlighter-rouge">preserveSelected: false</code> é obrigatório para remover o erro que existe ao selecionar um novo item da lista.
+ Para maiores informações consulte <a href="https://github.com/truckingsim/Ajax-Bootstrap-Select" rel="nofollow" target="_blank">aqui</a> e <a href="https://www.jqueryscript.net/form/AJAX-Autocomplete-Bootstrap-Select.html" rel="nofollow" target="_blank">aqui</a>.
+—</p>
   </li>
 </ol>
-
-<hr>
 
 <h2 id="resolução-para-telas-com-grid">
 <a id="resolução-para-telas-com-grid" class="anchor" href="#resolu%C3%A7%C3%A3o-para-telas-com-grid" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resolução para telas com grid</h2>
 
 <p>Caso necessite exibir algum dado de uma entidade relacionada, como por exemplo os dados do usuário que é responsável pela <code class="highlighter-rouge">Estação de Tratamento</code>, adicione o seguinte código no método do <code class="highlighter-rouge">service</code> que retorna os dados para o <code class="highlighter-rouge">DTO</code>.</p>
 
-<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">PagedResultDto</span><span class="p">&lt;</span><span class="n">EstacaoTratamentoListDto</span><span class="p">&gt;&gt;</span> <span class="nf">GetAll</span><span class="p">(</span><span class="n">GetEstacaoTratamentoInput</span> <span class="n">input</span><span class="p">)</span>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">PagedResultDto</span><span class="p">&lt;</span><span class="n">EstacaoTratamentoDto</span><span class="p">&gt;&gt;</span> <span class="nf">GetAll</span><span class="p">(</span><span class="n">GetAllEstacaoTratamentoInput</span> <span class="n">input</span><span class="p">)</span>
 <span class="p">{</span>
 
     <span class="kt">var</span> <span class="n">query</span> <span class="p">=</span> <span class="nf">CreateEstacaoTratamentoQuery</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
@@ -486,14 +484,14 @@
     <span class="c1">//Exemplo de como alterar o mapeamento para uma view</span>
     <span class="kt">var</span> <span class="n">config</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MapperConfiguration</span><span class="p">(</span>
         <span class="n">cfg</span> <span class="p">=&gt;</span> <span class="n">cfg</span><span class="p">.</span><span class="n">CreateMap</span><span class="p">&lt;</span><span class="n">EstacaoTratamento</span><span class="p">,</span>
-        <span class="n">EstacaoTratamentoListDto</span><span class="p">&gt;()</span>
+        <span class="n">EstacaoTratamentoDto</span><span class="p">&gt;()</span>
         <span class="c1">//Ao invés de retornar o Name do usuário, o campo é preenchido como FullName</span>
         <span class="p">.</span><span class="nf">ForMember</span><span class="p">(</span><span class="n">d</span> <span class="p">=&gt;</span> <span class="n">d</span><span class="p">.</span><span class="n">RespTecnicoName</span><span class="p">,</span> <span class="n">o</span> <span class="p">=&gt;</span> <span class="n">o</span><span class="p">.</span><span class="nf">MapFrom</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">RespTecnico</span><span class="p">.</span><span class="n">FullName</span><span class="p">))</span>
     <span class="p">);</span>
     <span class="kt">var</span> <span class="n">m</span> <span class="p">=</span> <span class="n">config</span><span class="p">.</span><span class="nf">CreateMapper</span><span class="p">();</span>
-    <span class="kt">var</span> <span class="n">y</span> <span class="p">=</span> <span class="n">m</span><span class="p">.</span><span class="n">Map</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">EstacaoTratamento</span><span class="p">&gt;,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">EstacaoTratamentoListDto</span><span class="p">&gt;&gt;(</span><span class="n">results</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">y</span> <span class="p">=</span> <span class="n">m</span><span class="p">.</span><span class="n">Map</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="n">EstacaoTratamento</span><span class="p">&gt;,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">EstacaoTratamentoDto</span><span class="p">&gt;&gt;(</span><span class="n">results</span><span class="p">);</span>
 
-    <span class="k">return</span> <span class="k">new</span> <span class="n">PagedResultDto</span><span class="p">&lt;</span><span class="n">EstacaoTratamentoListDto</span><span class="p">&gt;(</span><span class="n">resultCount</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">PagedResultDto</span><span class="p">&lt;</span><span class="n">EstacaoTratamentoDto</span><span class="p">&gt;(</span><span class="n">resultCount</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
